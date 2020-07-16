@@ -65,10 +65,13 @@ class HomeScreen extends StatelessWidget {
 class MyClipper extends CustomClipper<Path> {
   @override
   getClip(Size size) {
+    print(size);
     var path = Path();
-    path.lineTo(0, size.height - 80);
+    path.lineTo(0, size.height-30);
     path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 80);
+        size.width / 4, size.height, size.width / 2, size.height - 30);
+    path.quadraticBezierTo(
+        3 * size.width / 4, size.height - 60, size.width, size.height-30);
     path.lineTo((size.width), 0);
     path.close();
     return path;
