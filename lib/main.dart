@@ -52,8 +52,43 @@ class HomeScreen extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: SvgPicture.asset("assets/icons/menu.svg"),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Expanded(
+                    child: Stack(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          "assets/icons/Drcorona.svg",
+                          width: 200,
+                          fit: BoxFit.fitWidth,
+                          alignment: Alignment.topCenter,
+                        ),
+                        Positioned(
+                          top: 25,
+                          left: 140,
+                          child: Text(
+                            "All you need is\nstaying at home.",
+                            style:
+                                kHeadingTextStyle.copyWith(color: Colors.white),
+                          ),
+                        ),
+                        Container(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            height: 50,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(color: Colors.grey),
             ),
           ),
         ],
