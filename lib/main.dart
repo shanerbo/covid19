@@ -83,12 +83,29 @@ class HomeScreen extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             height: 50,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(25),
-              border: Border.all(color: Colors.grey),
+              border: Border.all(color: Colors.black12),
+            ),
+            child: Row(
+              children: <Widget>[
+                SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+                Expanded(
+                  child: DropdownButton(
+                    items: ['a', 'b', 'c', 'd']
+                        .map((e) => DropdownMenuItem<String>(
+                              value: e,
+                              child: Text(e),
+                            ))
+                        .toList(),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ],
             ),
           ),
         ],
